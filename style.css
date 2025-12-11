@@ -1,0 +1,186 @@
+:root {
+    --primary: #4A90E2;
+    --accent: #F5A623;
+    --danger: #E74C3C;
+    --bg: #F0F4F8;
+    --card: #FFFFFF;
+    --text: #333333;
+    --correct: #2ECC71;
+    --wrong: #E74C3C;
+    --font-main: 'Noto Sans JP', sans-serif;
+    --font-heading: 'M PLUS Rounded 1c', sans-serif;
+    --font-mono: 'Roboto Mono', monospace; /* タイマー用 */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+nav button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    margin-left: 5px;
+    transition: 0.2s;
+}
+nav button:hover { background: white; color: var(--primary); }
+
+.nav-survival {
+    background: rgba(255,255,255,0.2);
+    border-color: #ffcccc;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* メニューカード */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.menu-card {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-bottom: 5px solid var(--primary);
+}
+.menu-card:hover { transform: translateY(-5px); }
+
+.master-card { border-bottom: 5px solid #9B59B6; background: #FAF5FF; }
+.master-card h2 { color: #8E44AD; }
+.survival-card { border-bottom: 5px solid var(--danger); background: #FFF5F5; }
+.survival-card h2 { color: var(--danger); }
+
+/* ゲーム画面 */
+.game-area {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* タイマー表示 */
+.timer-display {
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text);
+    background: #eee;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.result-time {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.question-box {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #eef;
+    border-radius: 10px;
+    font-family: var(--font-heading);
+    color: var(--primary);
+}
+
+.atomic-number { font-size: 1rem; color: #888; font-weight: bold; margin-bottom: 5px; }
+.progress-text { font-weight: bold; color: #666; margin-bottom: 10px; }
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.game-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    transition: background 0.2s;
+    width: 100%;
+}
+.game-btn:hover { background: #357ABD; }
+.game-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.feedback {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 30px;
+}
+
+.equation-box {
+    font-size: 1.5rem;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+.eq-input {
+    width: 50px;
+    height: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+}
